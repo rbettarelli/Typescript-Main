@@ -1,4 +1,4 @@
-const sarah = {
+/* const sarah = {
     name: 'Sarah',
     idade: 26,
     casado: true,
@@ -43,3 +43,5 @@ const mario: Pessoa = {
     casado: false,
     trabalho: Profissao.Engenheiro // Tudo padronizado e consistente
 }
+
+*/
