@@ -8,7 +8,7 @@ export {} // Para não reclamar de variáveis duplicadas
 */
 let botaoAtualizar = document.getElementById('atualizar-saldo');
 let botaoLimpar = document.getElementById('limpar-saldo')!;
-let soma = document.getElementById('soma')! as HTMLInputElement;
+let soma = document.getElementById('soma'!) as HTMLInputElement;
 let campoSaldo = document.getElementById('campo-saldo');
 
 let saldoTotal = 0

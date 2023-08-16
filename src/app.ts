@@ -1,27 +1,84 @@
-console.log('Arquivo de testes. Pode mexer nele como quiser.')
+console.log("Arquivo de testes. Pode mexer nele como quiser.");
 
-//Desafio 1 
+//Desafio 1
 
-let employee: {code: number, name: string} = {
-    code: 10,
-    name: "John"
-}
+let employee: { code: number; name: string } = {
+  code: 10,
+  name: "John",
+};
 
-//Desafio 2 
+//Desafio 2
 enum profissao {
-    Atriz,
-    Padeiro,
-
+  Atriz,
+  Padeiro,
 }
 
-type Pessoa = { nome: string, idade: number, profissao: profissao} 
+type Pessoa = { nome: string; idade: number; profissao: profissao };
 
-const pessoa1: Pessoa = {nome: 'Maria', idade: 53, profissao: profissao.Atriz }
-const pessoa2: Pessoa = {nome: "Roberto", idade: 23, profissao: profissao.Padeiro}
-const pessoa3: Pessoa = {nome: "Laura", idade: 34, profissao: profissao.Atriz}
-const pessoa4: Pessoa = {nome: "Carlos", idade: 67, profissao: profissao.Padeiro}
+const pessoa1: Pessoa = {
+  nome: "Maria",
+  idade: 53,
+  profissao: profissao.Atriz,
+};
+const pessoa2: Pessoa = {
+  nome: "Roberto",
+  idade: 23,
+  profissao: profissao.Padeiro,
+};
+const pessoa3: Pessoa = {
+  nome: "Laura",
+  idade: 34,
+  profissao: profissao.Atriz,
+};
+const pessoa4: Pessoa = {
+  nome: "Carlos",
+  idade: 67,
+  profissao: profissao.Padeiro,
+};
 
 //Desafio 3
 
+let botaoAtualizar = document.getElementById('atualizar-saldo');
+let botaoLimpar = document.getElementById('limpar-saldo')!;
+let soma = document.getElementById('soma'!) as HTMLInputElement;
+let campoSaldo = document.getElementById('campo-saldo');
+
+let saldo = 0
+
+limparSaldo()
+
+function somarAoSaldo(soma: number) {
+    if (campoSaldo) {
+        saldo += soma
+        campoSaldo.innerHTML = saldo.toString();
+        limpaSoma();
+    }
+}
+
+function limpaSoma() {
+    soma.value = "";
+}
+
+function limparSaldo() {
+    if (campoSaldo) {
+        saldo = 0;
+        campoSaldo.innerHTML = saldo.toString();
+    }
+}
+
+if (botaoAtualizar) {
+    botaoAtualizar.addEventListener('click', () => {
+        somarAoSaldo(Number(soma.value)); 
+    });
+}
+botaoLimpar.addEventListener('click', () => { 
+    limparSaldo();
+});
 
 
+/**
+    <h4>Valor a ser adicionado: <input id="soma"> </h4>
+    <button id="atualizar-saldo">Atualizar saldo</button>
+    <button id="limpar-saldo">Limpar seu saldo</button>
+    <h1>"Seu saldo é: " <span id="campo-saldo"></span></h1>
+ */
